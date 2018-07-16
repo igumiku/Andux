@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Andux.iml" filepath="$PROJECT_DIR$/Andux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jadux/jadux.iml" filepath="$PROJECT_DIR$/jadux/jadux.iml" />
+    </modules>
+  </component>
+</project>
