@@ -1,4 +1,10 @@
 package com.didi.soda.jadux;
 
-public class Action {
+public abstract class Action<T> {
+
+  private T payload;
+
+  public Action(T payload) {
+    this.payload = payload;
+  }
 }

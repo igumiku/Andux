@@ -1,5 +1,5 @@
 package com.didi.soda.jadux;
 
-public interface Reducer {
-   public State reduce(State state,Action action);
+public interface Reducer<T> {
+   public State reduce(State<T> state,Action action);
 }
