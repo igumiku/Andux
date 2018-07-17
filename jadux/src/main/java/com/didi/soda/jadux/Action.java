@@ -7,4 +7,8 @@ public abstract class Action<T> {
   public Action(T payload) {
     this.payload = payload;
   }
+
+  public T getPayload() {
+    return payload;
+  }
 }

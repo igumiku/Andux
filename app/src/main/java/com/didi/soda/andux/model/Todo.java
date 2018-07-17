@@ -5,23 +5,28 @@ package com.didi.soda.andux.model;
  */
 
 public class Todo {
-  private String text;
+    public Todo(String text, boolean completed) {
+        this.text = text;
+        this.completed = completed;
+    }
 
-  private boolean completed;
+    private String text;
 
-  public String getText() {
-    return text;
-  }
+    private boolean completed;
 
-  public void setText(String text) {
-    this.text = text;
-  }
+    public String getText() {
+        return text;
+    }
 
-  public boolean isCompleted() {
-    return completed;
-  }
+    public void setText(String text) {
+        this.text = text;
+    }
 
-  public void setCompleted(boolean completed) {
-    this.completed = completed;
-  }
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
 }

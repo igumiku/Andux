@@ -10,7 +10,7 @@ import java.util.List;
  * Created by lijiang on 17/07/2018.
  */
 
-public class AppState extends State {
+public class AppState{
 
   private VisivilityFilter visivilityFilter = VisivilityFilter.SHOW_ALL;
 

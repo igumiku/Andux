@@ -2,10 +2,10 @@ package com.didi.soda.jadux;
 
 import io.reactivex.Observable;
 
-public class Strore<T> {
+public class Strore<State> {
 
-  private State<T> state;
-  private Reducer reducer;
+  private State state;
+  private Reducer<State> reducer;
 
   protected void createStore() {
 
