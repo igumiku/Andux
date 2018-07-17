@@ -13,10 +13,10 @@ import com.didi.soda.jadux.State;
 public class VisivilityFilterReducer implements Reducer<VisivilityFilter> {
 
   @Override
-  public State<VisivilityFilter> reduce(State<VisivilityFilter> state, Action action) {
+  public VisivilityFilter reduce(VisivilityFilter state, Action action) {
     if(action instanceof VisivilityAction){
-
+      return ((VisivilityAction) action).getPayload();
     }
-    return null;
+    return state;
   }
 }

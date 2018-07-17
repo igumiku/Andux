@@ -6,6 +6,7 @@ import com.didi.soda.andux.model.VisivilityFilter;
 import com.didi.soda.jadux.Action;
 import com.didi.soda.jadux.Reducer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
