@@ -1,14 +1,23 @@
 package com.didi.soda.jadux;
 
-public abstract class Action<T> {
+import com.didi.soda.jadux.utils.ActionTypes;
 
-  private T payload;
+public class Action<T> {
 
-  public Action(T payload) {
-    this.payload = payload;
-  }
+    private String type = ActionTypes.UNKNOW;
 
-  public T getPayload() {
-    return payload;
-  }
+    private T payload;
+
+    public Action(String type, T payload) {
+        this.type = type;
+        this.payload = payload;
+    }
+
+    public T getPayload() {
+        return payload;
+    }
+
+    public String getType() {
+        return type;
+    }
 }

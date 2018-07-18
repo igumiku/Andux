@@ -4,16 +4,16 @@ import com.didi.soda.andux.model.AppModel;
 import com.didi.soda.andux.model.Todo;
 import com.didi.soda.andux.model.VisivilityFilter;
 import com.didi.soda.jadux.Action;
+import com.didi.soda.jadux.ConbineReducers;
 import com.didi.soda.jadux.Reducer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by lijiang on 17/07/2018.
  */
 
-public class AppReducer implements Reducer<AppModel> {
+public class AppReducer implements Reducer<AppModel>,ConbineReducers<AppModel> {
 
     private AddTodoReducer addTodoReducer;
     private VisivilityFilterReducer visivilityFilterReducer;
@@ -31,5 +31,10 @@ public class AppReducer implements Reducer<AppModel> {
         appModel.setTodos(addTodoReducer.reduce(todos, action));
         appModel.setVisivilityFilter(visivilityFilterReducer.reduce(filter, action));
         return appModel;
+    }
+
+    @Override
+    public Reducer<AppModel> conbineReducers(List<Reducer> reducers) {
+        return null;
     }
 }

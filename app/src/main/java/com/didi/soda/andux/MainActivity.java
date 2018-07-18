@@ -11,9 +11,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 
-import com.didi.soda.andux.action.AddTodoAction;
-import com.didi.soda.andux.action.ToggleTodoAction;
-import com.didi.soda.andux.action.VisivilityAction;
+import com.didi.soda.andux.action.Actions;
 import com.didi.soda.andux.model.Todo;
 import com.didi.soda.andux.model.VisivilityFilter;
 import com.didi.soda.andux.store.MainStore;
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        final TodoAdapter adapter = new TodoAdapter(store.getState().getTodos(), position -> store.dispatch(new ToggleTodoAction(position)));
+        final TodoAdapter adapter = new TodoAdapter(store.getState().getTodos(), position -> store.dispatch(Actions.toggleTodo(position)));
 
         adapter.setHasStableIds(true);
         recyclerView.setAdapter(adapter);
@@ -74,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         final EditText editText = (EditText) findViewById(R.id.note_edit_text);
         findViewById(R.id.add).setOnClickListener(view -> {
             String note = editText.getText().toString();
-            store.dispatch(new AddTodoAction(note));
+            store.dispatch(Actions.addTodo(note));
             editText.setText(null);
         });
     }
@@ -87,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
                 VisivilityFilter filter = VisivilityFilter.values()[position];
-                store.dispatch(new VisivilityAction(filter));
+                store.dispatch(Actions.setVisibleFilter(filter));
             }
 
             @Override
