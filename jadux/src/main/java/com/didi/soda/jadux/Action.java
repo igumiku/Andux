@@ -2,7 +2,7 @@ package com.didi.soda.jadux;
 
 import com.didi.soda.jadux.utils.ActionTypes;
 
-public class Action<T> {
+public class Action<T> implements AbsAction{
 
     private String type = ActionTypes.UNKNOW;
 
